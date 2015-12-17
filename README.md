@@ -1,1 +1,1 @@
-# primate_MRI_processing
+# primate-MRI-processing
