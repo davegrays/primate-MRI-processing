@@ -18,7 +18,7 @@ pushd $age
 #use dof6 to first get the brain masks
 #use dof6_2 if you already have the brain masks
 
-case dof6_2 in
+case dof6 in
 
 dof6)
 #put images in template coordinate space using whole head
