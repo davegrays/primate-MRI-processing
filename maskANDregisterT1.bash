@@ -51,6 +51,7 @@ rm ${sub}_rot2native.mat ${sub}_rot2atl_mask.nii.gz templateMask.nii.gz
 ;&
 dof6_brain)
 flirt -v -dof 6 -searchrx -180 180 -searchry -180 180 -searchrz -180 180 -in ${sub}_brain -ref ${atl_brain} -o ${sub}_brain_rot2atl -omat ${sub}_rot2atl.mat
+flirt -in ${sub} -ref ${atl} -o ${sub}_rot2atl -applyxfm -init ${sub}_rot2atl.mat -interp sinc
 #convert FSL mat to ANTS compatible itk mat
 c3d_affine_tool -ref ${sub}_brain_rot2atl.nii.gz -src ${sub}_brain.nii.gz ${sub}_rot2atl.mat -fsl2ras -oitk ${sub}_rot2atl.txt
 #N.B. if you want to use the inverse, specify so in the antsApplyTransforms command (rather than creating the inverse in FSL and converting to itk, which works improperly)
